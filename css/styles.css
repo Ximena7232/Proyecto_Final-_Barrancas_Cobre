@@ -1,85 +1,151 @@
-body {
-    font-family: Arial, sans-serif;
+* {
     margin: 0;
-    background: #e6f2ff;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    background: linear-gradient(to bottom, #e6f2ff, #ffffff);
+    color: #333;
 }
 
 header {
     position: sticky;
     top: 0;
-    background: #3399ff;
+    backdrop-filter: blur(10px);
+    background: rgba(51, 153, 255, 0.85);
     color: white;
-    text-align: center;
     padding: 15px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    z-index: 1000;
+}
+
+header h1 {
+    margin-bottom: 10px;
 }
 
 nav ul {
     display: flex;
     justify-content: center;
     list-style: none;
-    padding: 0;
-}
-
-nav ul li {
-    margin: 10px;
+    gap: 20px;
 }
 
 nav a {
     color: white;
     text-decoration: none;
     font-weight: bold;
+    padding: 8px 15px;
+    border-radius: 20px;
+    transition: 0.3s;
 }
 
 nav a:hover {
-    text-decoration: underline;
+    background: white;
+    color: #3399ff;
 }
 
 section {
-    padding: 40px;
+    padding: 60px 20px;
     text-align: center;
 }
 
-section:nth-child(even) {
+article {
     background: white;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 15px;
+    max-width: 900px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+}
+
+article:hover {
+    transform: translateY(-5px);
+}
+
+h2 {
+    margin-bottom: 20px;
+    color: #3399ff;
+    font-size: 28px;
+}
+
+h3 {
+    margin: 15px 0;
 }
 
 img {
     width: 260px;
     margin: 10px;
-    border-radius: 12px;
-    transition: transform 0.3s;
+    border-radius: 15px;
+    transition: 0.4s;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
 }
 
 img:hover {
-    transform: scale(1.05);
+    transform: scale(1.08) rotate(1deg);
+}
+
+#galeria img {
+    width: 220px;
 }
 
 button {
-    background: #3399ff;
-    color: white;
+    background: linear-gradient(45deg, #3399ff, #66ccff);
     border: none;
-    padding: 10px 15px;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 25px;
     cursor: pointer;
+    margin-top: 10px;
+    transition: 0.3s;
+    font-size: 15px;
 }
 
 button:hover {
-    background: #007acc;
+    transform: scale(1.05);
+    background: linear-gradient(45deg, #007acc, #33ccff);
+}
+
+input {
+    padding: 10px;
+    width: 250px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    margin-top: 10px;
+    outline: none;
+}
+
+input:focus {
+    border-color: #3399ff;
+}
+
+#resultado {
+    margin-top: 15px;
+    font-weight: bold;
+    color: #007acc;
 }
 
 footer {
     background: #3399ff;
     color: white;
     text-align: center;
-    padding: 15px;
+    padding: 20px;
+    margin-top: 20px;
 }
 
-/* Animación */
 .fade {
     opacity: 0;
-    transform: translateY(20px);
-    transition: 1s;
+    transform: translateY(30px);
+    transition: all 1s ease;
 }
 
+.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
 .visible {
     opacity: 1;
     transform: translateY(0);
